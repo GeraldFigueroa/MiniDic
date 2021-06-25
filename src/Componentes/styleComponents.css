@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,100;1,300;1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+}
+/* ---------- Estilo de la Lista de Palabras ----------*/
+.contenedor {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ContenedorPalabras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ContenedorPalabras .palabraBox {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+  box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+.ContenedorPalabras .palabraBox .titleBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  background: white;
+  font-size: 25px;
+}
+.ContenedorPalabras .palabraBox:hover .titleBox {
+  transform: scale(0);
+}
+
+.ContenedorPalabras .palabraBox .contendBox {
+  color: white;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.5s;
+  transform: scale(1) translateY(calc(100% - 5px));
+}
+.ContenedorPalabras .palabraBox:hover .contendBox {
+  transform: scale(1);
+}
+
+.ContenedorPalabras .palabraBox .contendBox h3 {
+  font-size: 25px;
+  padding: 10px;
+}
+.ContenedorPalabras .palabraBox .contendBox p {
+  font-size: 18px;
+  font-style: italic;
+  margin: 0 10px;
+}
+
+.ContenedorPalabras .palabraBox .iconsBox {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ContenedorPalabras .palabraBox .iconsBox i {
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.ContenedorPalabras .palabraBox .contendBox .iconsBox .deleteIcon:hover {
+  background: #a31616;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+.ContenedorPalabras .palabraBox .contendBox .iconsBox .buildIcon:hover {
+  background: #289807;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+/* ---------- Estilo del Menu de busqueda ----------*/
+
+.menuBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menuBox h2 {
+  padding: 10px;
+  background: rgba(235, 217, 217, 0.5);
+  color: black;
+  border-radius: 50%;
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+  margin-right: 10px;
+  user-select: none;
+}
+.menuBox .buscadorBox {
+  margin: auto;
+  padding: 10px;
+}
+
+.menuBox .buscadorBox input {
+  padding: 8px;
+  font-size: 16px;
+  width: 300px;
+}
+
+.menuBox .buttonsBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menuBox .buttonsBox button {
+  padding: 5px;
+  margin: 0 5px;
+}
+/* ---------- Estilo del Formulario ----------*/
+
+.formContenedor {
+  position: relative;
+  padding: 70px 40px;
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  margin: 35px;
+}
+
+.formContenedor h2 {
+  color: #111;
+  margin-bottom: 45px;
+  font-weight: 500;
+  line-height: 1em;
+  padding-left: 10px;
+  border-left: 5px solid #494848;
+}
+
+.formContenedor .inputBox {
+  position: relative;
+  width: 300px;
+  height: 46px;
+  margin-bottom: 35px;
+}
+
+.formContenedor .inputBox:last-child {
+  margin-bottom: 0;
+}
+
+.formContenedor .inputBox input,
+.formContenedor .inputBox textarea {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 1px solid #111;
+  background: transparent;
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  color: #111;
+  font-weight: 500;
+}
+
+.formContenedor .inputBox span {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  padding: 10px;
+  display: inline-block;
+  font-size: 16px;
+  color: #111;
+  font-weight: 300;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.formContenedor .inputBox textarea {
+  resize: none;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.formContenedor .inputBox input:focus ~ span,
+.formContenedor .inputBox textarea:focus ~ span,
+.formContenedor .inputBox input:valid ~ span,
+.formContenedor .inputBox textarea:valid ~ span {
+  transform: translateX(-10px) translateY(-32px);
+  font-size: 14px;
+}
+
+.formContenedor .inputBox input[type="submit"] {
+  background: #494848;
+  color: white;
+  border: none;
+  max-width: 150px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.formContenedor .inputBox input[type="submit"]:hover {
+  background: #e9903d;
+}
+
+.formContenedor .inputBoxColor {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+.formContenedor .inputBoxColor p {
+  display: flex;
+  margin: 0 20px 0 10px;
+  font-weight: 300;
+}
